@@ -68,7 +68,19 @@ function App() {
   const downloadImage = () => {
     if (phoneRef.current === null) return;
 
-    html2canvas(phoneRef.current, { backgroundColor: null, useCORS: true, scale: 2 })
+    html2canvas(phoneRef.current, {
+      backgroundColor: null,
+      useCORS: true,
+      scale: 2,
+      onclone: (clonedDoc) => {
+        // html2canvas draws native scrollbars for overflow: auto.
+        // We temporarily hide it in the clone so it doesn't appear in the image.
+        const chatAreas = clonedDoc.querySelectorAll('.chat-area');
+        chatAreas.forEach(area => {
+          (area as HTMLElement).style.overflow = 'hidden';
+        });
+      }
+    })
       .then((canvas) => {
         const dataUrl = canvas.toDataURL('image/png');
         const link = document.createElement('a');
