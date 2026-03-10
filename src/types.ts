@@ -18,4 +18,5 @@ export interface ChatConfig {
     clock: string;
     batteryPercent: number;
     chatName: string;
+    person1Avatar?: string;
 }

@@ -235,6 +235,15 @@ input[type="checkbox"] {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.chat-area::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari and Opera */
 }
 
 .chat-date {

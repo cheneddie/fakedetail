@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react'
-import { toPng } from 'html-to-image'
+import html2canvas from 'html2canvas'
 import { Download } from 'lucide-react'
 import type { ChatConfig, Message } from './types'
 import { ControlPanel } from './components/ControlPanel'
@@ -68,8 +68,9 @@ function App() {
   const downloadImage = () => {
     if (phoneRef.current === null) return;
 
-    toPng(phoneRef.current, { cacheBust: true })
-      .then((dataUrl) => {
+    html2canvas(phoneRef.current, { backgroundColor: null, useCORS: true, scale: 2 })
+      .then((canvas) => {
+        const dataUrl = canvas.toDataURL('image/png');
         const link = document.createElement('a');
         link.download = `fake-chat-${Date.now()}.png`;
         link.href = dataUrl;

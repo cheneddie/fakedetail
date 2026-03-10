@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import type { ChatConfig, Message, Sender } from '../types';
 
+const avatarsGlob = import.meta.glob<{ default: string }>('../header_cropped/*.jpg', { eager: true });
+const avatarList = Object.values(avatarsGlob).map(mod => mod.default);
+
 interface Props {
     config: ChatConfig;
     setConfig: React.Dispatch<React.SetStateAction<ChatConfig>>;
@@ -12,6 +15,7 @@ export const ControlPanel: React.FC<Props> = ({ config, setConfig, messages, set
     const [currentSender, setCurrentSender] = useState<Sender>('person1');
     const [msgTime, setMsgTime] = useState('1:27 PM');
     const [currentText, setCurrentText] = useState('');
+    const [showAvatars, setShowAvatars] = useState(false);
 
     const addMessage = (e: React.FormEvent) => {
         e.preventDefault();
@@ -103,6 +107,54 @@ export const ControlPanel: React.FC<Props> = ({ config, setConfig, messages, set
             <div className="control-group" style={{ marginTop: '1rem' }}>
                 <label>Direct message with</label>
                 <input type="text" value={config.chatName} onChange={e => setConfig({ ...config, chatName: e.target.value })} />
+            </div>
+
+            <div className="control-group" style={{ marginTop: '1rem' }}>
+                <label>Person 1 Avatar</label>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    {config.person1Avatar ? (
+                        <img
+                            src={config.person1Avatar}
+                            alt="current avatar"
+                            style={{ width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover', cursor: 'pointer', border: '1px solid #ccc' }}
+                            onClick={() => setShowAvatars(!showAvatars)}
+                        />
+                    ) : (
+                        <div
+                            style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#2cba14', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '11px', fontWeight: 'bold', cursor: 'pointer' }}
+                            onClick={() => setShowAvatars(!showAvatars)}
+                        >
+                            LINE
+                        </div>
+                    )}
+                    <span style={{ fontSize: '12px', color: '#5ea193', cursor: 'pointer', fontWeight: 'bold' }} onClick={() => setShowAvatars(!showAvatars)}>點擊更換頭像</span>
+                </div>
+
+                {showAvatars && (
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '10px', padding: '10px', backgroundColor: '#fff', border: '1px solid #e2d8c3', borderRadius: '8px' }}>
+                        <div
+                            style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#2cba14', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '11px', fontWeight: 'bold', cursor: 'pointer', border: !config.person1Avatar ? '2px solid #5ea193' : '1px solid transparent' }}
+                            onClick={() => {
+                                setConfig({ ...config, person1Avatar: undefined });
+                                setShowAvatars(false);
+                            }}
+                        >
+                            預設
+                        </div>
+                        {avatarList.map((av, idx) => (
+                            <img
+                                key={idx}
+                                src={av}
+                                alt={`avatar ${idx}`}
+                                style={{ width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover', cursor: 'pointer', border: config.person1Avatar === av ? '2px solid #5ea193' : '1px solid #eee' }}
+                                onClick={() => {
+                                    setConfig({ ...config, person1Avatar: av });
+                                    setShowAvatars(false);
+                                }}
+                            />
+                        ))}
+                    </div>
+                )}
             </div>
 
             {/* Message Adder */}

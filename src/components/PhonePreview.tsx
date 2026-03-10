@@ -53,7 +53,11 @@ export const PhonePreview = forwardRef<HTMLDivElement, Props>(({ config, message
 
                     return (
                         <div key={idx} className={`message ${isLeft ? 'left' : 'right'}`}>
-                            <div className="avatar">LINE</div>
+                            {isLeft && config.person1Avatar ? (
+                                <img src={config.person1Avatar} alt="avatar" className="avatar" style={{ objectFit: 'cover' }} />
+                            ) : (
+                                <div className="avatar">LINE</div>
+                            )}
                             <div className="bubble-wrap">
                                 <div className="message-wrap">
                                     {msg.type === 'image' ? (
