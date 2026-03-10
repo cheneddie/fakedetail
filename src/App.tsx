@@ -11,7 +11,7 @@ function App() {
     hideHeader: false,
     hideFooter: false,
     layout: 'android',
-    clock: '10:04 am',
+    clock: '10:04',
     batteryPercent: 50,
     chatName: 'John Doe',
   });
@@ -21,46 +21,46 @@ function App() {
       id: '1',
       sender: 'system',
       type: 'date',
-      content: 'Today'
+      content: '今天'
     },
-    {
-      id: '2',
-      sender: 'person1',
-      type: 'text',
-      content: 'Hello',
-      timestamp: '1:55 PM'
-    },
-    {
-      id: '3',
-      sender: 'person2',
-      type: 'text',
-      content: 'Hii',
-      timestamp: '1:20 PM',
-      isRead: true
-    },
-    {
-      id: '4',
-      sender: 'person2',
-      type: 'text',
-      content: 'How are you?',
-      timestamp: '1:20 PM',
-      isRead: true
-    },
-    {
-      id: '5',
-      sender: 'person1',
-      type: 'text',
-      content: "I'm fine!",
-      timestamp: '1:55 PM'
-    },
-    {
-      id: '6',
-      sender: 'person2',
-      type: 'text',
-      content: 'Ohh!',
-      timestamp: '1:20 PM',
-      isRead: true
-    }
+    // {
+    //   id: '2',
+    //   sender: 'person1',
+    //   type: 'text',
+    //   content: 'Hello',
+    //   timestamp: '1:55 PM'
+    // },
+    // {
+    //   id: '3',
+    //   sender: 'person2',
+    //   type: 'text',
+    //   content: 'Hii',
+    //   timestamp: '1:20 PM',
+    //   isRead: true
+    // },
+    // {
+    //   id: '4',
+    //   sender: 'person2',
+    //   type: 'text',
+    //   content: 'How are you?',
+    //   timestamp: '1:20 PM',
+    //   isRead: true
+    // },
+    // {
+    //   id: '5',
+    //   sender: 'person1',
+    //   type: 'text',
+    //   content: "I'm fine!",
+    //   timestamp: '1:55 PM'
+    // },
+    // {
+    //   id: '6',
+    //   sender: 'person2',
+    //   type: 'text',
+    //   content: 'Ohh!',
+    //   timestamp: '1:20 PM',
+    //   isRead: true
+    // }
   ]);
 
   const phoneRef = useRef<HTMLDivElement>(null);

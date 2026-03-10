@@ -4,8 +4,10 @@
   --primary-color: #5ea193;
   --text-dark: #333;
   --text-light: #666;
-  --line-bg: #8096AE; /* Line background for Android */
-  --line-light-bg: #a1b8d2; /* Line background lighter variant */
+  --line-bg: #8096AE;
+  /* Line background for Android */
+  --line-light-bg: #a1b8d2;
+  /* Line background lighter variant */
   --line-green: #a4e477;
 }
 
@@ -60,21 +62,21 @@ body {
   border: 1px solid #e2d8c3;
   border-radius: 4px;
   padding: 1.5rem;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
   border-right: 4px solid var(--primary-color);
 }
 
 .preview-container {
   flex: 2;
   background-color: var(--panel-bg);
-  background-image: url('data:image/svg+xml;utf8,<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><path d="M10 10 L20 20" stroke="rgba(0,0,0,0.03)" stroke-width="1"/></svg>'); 
+  background-image: url('data:image/svg+xml;utf8,<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><path d="M10 10 L20 20" stroke="rgba(0,0,0,0.03)" stroke-width="1"/></svg>');
   border: 1px solid #e2d8c3;
   border-radius: 8px;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.02);
   position: relative;
 }
 
@@ -100,7 +102,9 @@ label {
   font-size: 0.9rem;
 }
 
-input[type="text"], input[type="number"], textarea {
+input[type="text"],
+input[type="number"],
+textarea {
   width: 100%;
   padding: 0.6rem;
   border: 1px solid #ccc;
@@ -109,11 +113,13 @@ input[type="text"], input[type="number"], textarea {
   font-family: inherit;
 }
 
-input[type="radio"], input[type="checkbox"] {
+input[type="radio"],
+input[type="checkbox"] {
   margin-right: 0.5rem;
 }
 
-.radio-group, .checkbox-group {
+.radio-group,
+.checkbox-group {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -161,7 +167,7 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .person-controls {
-  background-color: rgba(0,0,0,0.02);
+  background-color: rgba(0, 0, 0, 0.02);
   padding: 1rem;
   border-radius: 4px;
   border: 1px solid #e2d8c3;
@@ -173,7 +179,7 @@ input[type="radio"], input[type="checkbox"] {
   height: 568px;
   background-color: var(--line-bg);
   position: relative;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -187,7 +193,7 @@ input[type="radio"], input[type="checkbox"] {
   padding: 2px 10px;
   font-size: 11px;
   color: white;
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   height: 20px;
 }
 
@@ -206,7 +212,7 @@ input[type="radio"], input[type="checkbox"] {
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .line-header .title {
@@ -237,7 +243,7 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .chat-date span {
-  background-color: rgba(0,0,0,0.15);
+  background-color: rgba(0, 0, 0, 0.15);
   color: white;
   font-size: 11px;
   padding: 3px 10px;
@@ -264,7 +270,8 @@ input[type="radio"], input[type="checkbox"] {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background-color: #2cba14; /* Line green icon as default placeholder */
+  background-color: #2cba14;
+  /* Line green icon as default placeholder */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -273,8 +280,10 @@ input[type="radio"], input[type="checkbox"] {
   font-weight: bold;
   flex-shrink: 0;
 }
+
 .message.right .avatar {
-  display: none; /* Hide avatar for right side usually */
+  display: none;
+  /* Hide avatar for right side usually */
 }
 
 .bubble-wrap {
@@ -286,6 +295,7 @@ input[type="radio"], input[type="checkbox"] {
 .message.left .bubble-wrap {
   align-items: flex-start;
 }
+
 .message.right .bubble-wrap {
   align-items: flex-end;
 }
@@ -312,7 +322,7 @@ input[type="radio"], input[type="checkbox"] {
 
 .message-meta {
   font-size: 10px;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -323,6 +333,7 @@ input[type="radio"], input[type="checkbox"] {
   align-items: flex-start;
   margin-left: 4px;
 }
+
 .message.right .message-meta {
   align-items: flex-end;
   margin-right: 4px;
@@ -332,6 +343,7 @@ input[type="radio"], input[type="checkbox"] {
   display: flex;
   align-items: flex-end;
 }
+
 .message.right .message-wrap {
   flex-direction: row-reverse;
 }
@@ -347,7 +359,7 @@ input[type="radio"], input[type="checkbox"] {
   display: flex;
   align-items: center;
   padding: 0 10px;
-  gap: 10px;
+  gap: 8px;
 }
 
 .input-box {
@@ -355,4 +367,13 @@ input[type="radio"], input[type="checkbox"] {
   background-color: #f0f0f0;
   height: 32px;
   border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px 0 12px;
+}
+
+.input-placeholder {
+  color: #a0a0a0;
+  font-size: 14px;
 }

@@ -56,7 +56,7 @@ export const ControlPanel: React.FC<Props> = ({ config, setConfig, messages, set
             id: Date.now().toString(),
             sender: 'system',
             type: 'date',
-            content: 'Today',
+            content: '今天',
         };
         setMessages([...messages, newMsg]);
     };

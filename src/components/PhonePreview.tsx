@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { ChevronLeft, Search, Phone, Menu, Plus, Smile, Mic, Image as ImageIcon } from 'lucide-react';
+import { ChevronLeft, Search, Phone, Menu, Plus, Smile, Mic, Image as ImageIcon, Camera } from 'lucide-react';
 import type { ChatConfig, Message } from '../types';
 
 interface Props {
@@ -75,11 +75,14 @@ export const PhonePreview = forwardRef<HTMLDivElement, Props>(({ config, message
             {/* Footer */}
             {!config.hideFooter && (
                 <div className="line-footer">
-                    <Plus size={24} color="#888" />
-                    <ImageIcon size={24} color="#888" />
-                    <div className="input-box"></div>
-                    <Smile size={24} color="#888" />
-                    <Mic size={24} color="#888" />
+                    <Plus size={24} color="#888" strokeWidth={1.5} />
+                    <Camera size={24} color="#888" strokeWidth={1.5} />
+                    <ImageIcon size={24} color="#888" strokeWidth={1.5} />
+                    <div className="input-box">
+                        <span className="input-placeholder">Aa</span>
+                        <Smile size={20} color="#888" strokeWidth={1.5} />
+                    </div>
+                    <Mic size={24} color="#888" strokeWidth={1.5} />
                 </div>
             )}
         </div>
