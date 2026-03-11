@@ -66,7 +66,7 @@ export const PhonePreview = forwardRef<HTMLDivElement, Props>(({ config, message
                                         <div className="bubble">{msg.content}</div>
                                     )}
                                     <div className="message-meta">
-                                        {!isLeft && msg.isRead && <span className="read-status">Read</span>}
+                                        {!isLeft && msg.isRead && <span className="read-status">已讀</span>}
                                         <span>{msg.timestamp}</span>
                                     </div>
                                 </div>
